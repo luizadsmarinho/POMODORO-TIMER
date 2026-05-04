@@ -21,6 +21,19 @@ function getTimes() {
   breakT = document.getElementById("breakTime").value * 60;
 }
 
+function updateFromInput() {
+  let focus = document.getElementById("focusTime").value * 60
+  let brk = document.getElementById("breakTime").value * 60
+
+  workTime = focus
+  breakT = brk
+
+  if (!interval) {
+    timeLeft = isWorking ? workTime : breakT
+    updateTimer()
+  }
+}
+
 /* AUDIO */
 function playRain() {
   let a = document.getElementById("rainSound");
