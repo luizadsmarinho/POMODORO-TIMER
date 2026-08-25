@@ -4,7 +4,7 @@ let timeLeft = workTime;
 let isWorking = true;
 let interval = null;
 
-/* TIMER */
+
 function updateTimer() {
   let m = Math.floor(timeLeft / 60);
   let s = timeLeft % 60;
@@ -34,7 +34,7 @@ function updateFromInput() {
   }
 }
 
-/* AUDIO */
+
 function playRain() {
   let a = document.getElementById("rainSound");
   a.volume = 0.25;
@@ -61,7 +61,7 @@ function stopAll() {
   stopRainEffect();
 }
 
-/* VIDEOS */
+
 function showRain() {
   document.getElementById("rainVideo").style.display = "block";
   document.getElementById("birdVideo").style.display = "none";
@@ -72,7 +72,7 @@ function showBird() {
   document.getElementById("birdVideo").style.display = "block";
 }
 
-/* CHUVA VISUAL */
+
 function startRainEffect() {
   const r = document.querySelector(".rain");
   r.style.display = "block";
@@ -94,7 +94,7 @@ function stopRainEffect() {
   setTimeout(() => r.style.display = "none", 500);
 }
 
-/* INICIAR */
+
 function start() {
   if (interval) return;
 
@@ -135,14 +135,14 @@ function start() {
   }, 1000);
 }
 
-/* PAUSAR */
+
 function pause() {
   clearInterval(interval);
   interval = null;
   stopAll();
 }
 
-/* REINICIAR */
+
 function reset() {
   pause();
   isWorking = true;
@@ -151,10 +151,10 @@ function reset() {
   updateTimer();
 }
 
-/* INIT */
+
 updateTimer();
 
-/* RAIN GENERATION */
+
 const rainArea = document.querySelector(".rain");
 
 for (let i = 0; i < 80; i++) {
