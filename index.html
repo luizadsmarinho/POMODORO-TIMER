@@ -49,11 +49,25 @@
   <div id="status">Pronto</div>
   <div id="timer">25:00</div>
 
-  <div class="buttons">
-    <button class="start" onclick="start()">Iniciar</button>
-    <button class="pause" onclick="pause()">Pausar</button>
-    <button class="reset" onclick="reset()">Reiniciar</button>
-  </div>
+<div class="buttons">
+  <button class="start" onclick="start()">Iniciar</button>
+  <button class="pause" onclick="pause()">Pausar</button>
+  <button class="reset" onclick="reset()">Reiniciar</button>
+</div>
+
+<div class="volume-control">
+  <label for="rainVolume">🔊 Volume</label>
+
+  <input
+    type="range"
+    id="rainVolume"
+    min="0"
+    max="100"
+    value="25"
+    oninput="updateRainVolume()"
+  >
+
+  <span id="rainVolumeValue">25%</span>
 </div>
 
 <audio id="rainSound" loop>
